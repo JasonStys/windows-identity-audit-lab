@@ -8,7 +8,7 @@ Limits: 4 MiB JSON read, 2000 principals, 10000 aggregate edges, 8 protected gro
 
 Policy: same host alias, nonempty unique protected SIDs, unique (group,principal) explicit approvals, unique scoped ticketed exceptions with expiry, stale_days 1–3650 and max_age_hours 1–8760. Approval for a nested group **does not approve its users**. Active means expiry strictly later than reference time. Duplicate keys, NaN/Infinity and unknown fields fail.
 
-Rules: collection-incomplete, snapshot-stale, protected-group-missing, membership-unknown, membership-cycle, unresolved-principal, unapproved-membership, broad-membership, exception-expired, account-state-unknown, account-history-unknown, password-not-required, inactive-account, expired-enabled-account.
+Rules: collection-incomplete, snapshot-stale, protected-group-missing, membership-unknown, membership-cycle, unresolved-principal, unapproved-membership, broad-membership, exception-expired, account-source-unknown, account-state-unknown, account-history-unknown, password-not-required, inactive-account, expired-enabled-account.
 
 Broad principals: Everyone, Authenticated Users, built-in Users and Guests by well-known SID. Approval cannot suppress their warning. Unapproved disabled users are review priority because membership remains latent; enabled or unknown-state users are high review priority. These are configurable-scope review heuristics, not an exploit or compliance verdict.
 

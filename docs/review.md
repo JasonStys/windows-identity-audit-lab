@@ -4,6 +4,8 @@ Author: Jason Stys.
 
 Review boundaries: account metadata never coerced to false on absence; external groups remain incomplete; approvals are exact-host/group/leaf scoped; cycle traversal is iterative; raw names/description/provider errors excluded; injected data parameterized/escaped; outputs never overwrite; runtime has no active network or enforcement imports.
 
+Review correction: unknown user source now emits account-source-unknown and prevents complete status. Without supported source metadata the analyzer cannot establish whether local hygiene applies. A fixed synthetic scenario protects this boundary.
+
 Before publishing: inspect tracked files for private snapshots, credentials or outputs; validate exact README inventory and physical code maps; run style/types/unit/property/scenario/CLI checks; hash-verify native tooling; pass Windows synthetic/native checks and static analysis; audit dependency graph and workflow pins; review known limitations.
 
 Release gate: both Validate and CodeQL must pass on final main. Preserve failed-run history if corrections occur. Public evidence identifies immutable accepted implementation and actual run/job IDs, with separate final documentation commit verification. Do not call local checks “GitHub Actions passed.”

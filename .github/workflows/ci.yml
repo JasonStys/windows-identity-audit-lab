@@ -1,86 +1,87 @@
 # Jason Stys: cross-platform offline evidence, disposable Windows collector tests and zero artifact/cache uploads.
 # BEGIN CODE MAP (generated; python scripts/code_map.py)
-# parameter: name — line 85
-# parameter: on — line 86
-# parameter: push — line 87
-# parameter: branches — line 88
-# parameter: pull_request — line 89
-# parameter: workflow_dispatch — line 90
-# parameter: permissions — line 91
-# parameter: contents — line 92
-# parameter: concurrency — line 93
-# parameter: group — line 94
-# parameter: cancel-in-progress — line 95
-# parameter: jobs — line 96
-# parameter: quality — line 97
-# parameter: name — line 98
-# parameter: runs-on — line 99
-# parameter: timeout-minutes — line 100
-# parameter: strategy — line 101
-# parameter: fail-fast — line 102
-# parameter: matrix — line 103
-# parameter: include — line 104
-# parameter: env — line 109
-# parameter: PYTHONPATH — line 110
-# parameter: PIP_NO_CACHE_DIR — line 111
-# parameter: steps — line 112
-# parameter: uses — line 113
-# parameter: with — line 114
-# parameter: persist-credentials — line 115
-# parameter: uses — line 116
-# parameter: with — line 117
-# parameter: python-version — line 118
-# parameter: run — line 119
+# parameter: name — line 86
+# parameter: on — line 87
+# parameter: push — line 88
+# parameter: branches — line 89
+# parameter: pull_request — line 90
+# parameter: workflow_dispatch — line 91
+# parameter: permissions — line 92
+# parameter: contents — line 93
+# parameter: concurrency — line 94
+# parameter: group — line 95
+# parameter: cancel-in-progress — line 96
+# parameter: jobs — line 97
+# parameter: quality — line 98
+# parameter: name — line 99
+# parameter: runs-on — line 100
+# parameter: timeout-minutes — line 101
+# parameter: strategy — line 102
+# parameter: fail-fast — line 103
+# parameter: matrix — line 104
+# parameter: include — line 105
+# parameter: env — line 110
+# parameter: PYTHONPATH — line 111
+# parameter: PIP_NO_CACHE_DIR — line 112
+# parameter: steps — line 113
+# parameter: uses — line 114
+# parameter: with — line 115
+# parameter: persist-credentials — line 116
+# parameter: uses — line 117
+# parameter: with — line 118
+# parameter: python-version — line 119
 # parameter: run — line 120
 # parameter: run — line 121
 # parameter: run — line 122
 # parameter: run — line 123
-# shell variable: cov — line 123
-# shell variable: report — line 123
 # parameter: run — line 124
+# shell variable: cov — line 124
+# shell variable: report — line 124
 # parameter: run — line 125
 # parameter: run — line 126
 # parameter: run — line 127
 # parameter: run — line 128
-# parameter: windows — line 129
-# parameter: name — line 130
-# parameter: runs-on — line 131
-# parameter: timeout-minutes — line 132
-# parameter: env — line 133
-# parameter: PIP_NO_CACHE_DIR — line 134
-# parameter: steps — line 135
-# parameter: uses — line 136
-# parameter: with — line 137
-# parameter: persist-credentials — line 138
-# parameter: uses — line 139
-# parameter: with — line 140
-# parameter: python-version — line 141
-# parameter: run — line 142
-# parameter: shell — line 143
+# parameter: run — line 129
+# parameter: windows — line 130
+# parameter: name — line 131
+# parameter: runs-on — line 132
+# parameter: timeout-minutes — line 133
+# parameter: env — line 134
+# parameter: PYTHONPATH — line 135
+# parameter: PIP_NO_CACHE_DIR — line 136
+# parameter: steps — line 137
+# parameter: uses — line 138
+# parameter: with — line 139
+# parameter: persist-credentials — line 140
+# parameter: uses — line 141
+# parameter: with — line 142
+# parameter: python-version — line 143
 # parameter: run — line 144
 # parameter: shell — line 145
 # parameter: run — line 146
-# parameter: run — line 147
-# parameter: security — line 148
-# parameter: name — line 149
-# parameter: runs-on — line 150
-# parameter: timeout-minutes — line 151
-# parameter: env — line 152
-# parameter: PIP_NO_CACHE_DIR — line 153
-# parameter: steps — line 154
-# parameter: uses — line 155
-# parameter: with — line 156
-# parameter: persist-credentials — line 157
-# parameter: fetch-depth — line 158
-# parameter: uses — line 159
-# parameter: with — line 160
-# parameter: python-version — line 161
-# parameter: run — line 162
-# parameter: run — line 163
+# parameter: shell — line 147
+# parameter: run — line 148
+# parameter: run — line 149
+# parameter: security — line 150
+# parameter: name — line 151
+# parameter: runs-on — line 152
+# parameter: timeout-minutes — line 153
+# parameter: env — line 154
+# parameter: PIP_NO_CACHE_DIR — line 155
+# parameter: steps — line 156
+# parameter: uses — line 157
+# parameter: with — line 158
+# parameter: persist-credentials — line 159
+# parameter: fetch-depth — line 160
+# parameter: uses — line 161
+# parameter: with — line 162
+# parameter: python-version — line 163
 # parameter: run — line 164
 # parameter: run — line 165
 # parameter: run — line 166
 # parameter: run — line 167
+# parameter: run — line 168
+# parameter: run — line 169
 # END CODE MAP
 name: Validate
 on:
@@ -131,6 +132,7 @@ jobs:
     runs-on: windows-latest
     timeout-minutes: 15
     env:
+      PYTHONPATH: .
       PIP_NO_CACHE_DIR: '1'
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
