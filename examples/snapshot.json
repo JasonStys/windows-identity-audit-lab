@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "host": "LAB-WIN",
+  "captured": "2026-10-14T00:00:00Z",
+  "users_complete": true,
+  "groups_complete": true,
+  "principals": [
+    {"sid":"S-1-5-32-544","kind":"group","source":"local","enabled":null,"password_required":null,"last_logon":null,"expires":null,"members":["S-1-5-21-100-200-300-1001","S-1-5-21-100-200-300-1002"],"members_complete":true},
+    {"sid":"S-1-5-21-100-200-300-1001","kind":"user","source":"local","enabled":true,"password_required":true,"last_logon":"2026-10-01T00:00:00Z","expires":null,"members":[],"members_complete":false},
+    {"sid":"S-1-5-21-100-200-300-1002","kind":"user","source":"local","enabled":true,"password_required":false,"last_logon":"2025-10-01T00:00:00Z","expires":null,"members":[],"members_complete":false}
+  ]
+}
