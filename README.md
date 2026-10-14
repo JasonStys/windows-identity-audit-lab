@@ -43,6 +43,8 @@ Customize [examples/policy.json](examples/policy.json) **privately** for that ex
 
 Actions deliberately upload no artifacts, create no caches, and print only synthetic evidence or native assertion summaries. PowerShell coverage is described separately from Python coverage; CodeQL covers Python, not PowerShell.
 
+Accepted implementation validation: **95 tests / 100% Python statement-and-branch coverage** on all four OS/Python entries, **24 exact scenario oracles**, **29 Windows native/synthetic/static assertions**, and all seven CI jobs passed. See the immutable [validation report](docs/validation.md) and latest [Actions](https://github.com/JasonStys/windows-identity-audit-lab/actions). Risk-based testing and privacy documentation shaped the implementation, especially unknown evidence and approval boundaries.
+
 ## Every tracked file
 
 <!-- BEGIN FILE GUIDE -->
@@ -59,6 +61,11 @@ Actions deliberately upload no artifacts, create no caches, and print only synth
 | [docs/coding.md](docs/coding.md) | Coding and documentation conventions. |
 | [docs/contracts.md](docs/contracts.md) | Contracts and rule semantics. |
 | [docs/performance.md](docs/performance.md) | Performance and complexity. |
+| [docs/reports/benchmark.json](docs/reports/benchmark.json) | Measured bounded graph audit latency and Python allocation peak. |
+| [docs/reports/ci.json](docs/reports/ci.json) | Actual immutable accepted-source CI snapshot. |
+| [docs/reports/evaluation.json](docs/reports/evaluation.json) | Measured fixed synthetic scenario outcomes. |
+| [docs/reports/example.html](docs/reports/example.html) | Inert synthetic analyst report. |
+| [docs/reports/powershell.json](docs/reports/powershell.json) | Actual synthetic and disposable-runner Windows validation. |
 | [docs/research.md](docs/research.md) | Primary-source research notes. |
 | [docs/review.md](docs/review.md) | Code review and release checklist. |
 | [docs/runbook.md](docs/runbook.md) | Operator runbook and troubleshooting. |

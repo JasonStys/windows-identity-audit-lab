@@ -1,0 +1,195 @@
+{
+  "author": "Jason Stys",
+  "scenarios": 24,
+  "outcomes": [
+    {
+      "name": "approved",
+      "rules": [],
+      "complete": true,
+      "passed": true
+    },
+    {
+      "name": "unapproved",
+      "rules": [
+        "unapproved-membership"
+      ],
+      "complete": true,
+      "passed": true
+    },
+    {
+      "name": "disabled-latent",
+      "rules": [
+        "unapproved-membership"
+      ],
+      "complete": true,
+      "passed": true
+    },
+    {
+      "name": "password-optional",
+      "rules": [
+        "password-not-required"
+      ],
+      "complete": true,
+      "passed": true
+    },
+    {
+      "name": "last-logon-null",
+      "rules": [
+        "account-history-unknown"
+      ],
+      "complete": false,
+      "passed": true
+    },
+    {
+      "name": "stale-account",
+      "rules": [
+        "inactive-account"
+      ],
+      "complete": true,
+      "passed": true
+    },
+    {
+      "name": "expired-account",
+      "rules": [
+        "expired-enabled-account"
+      ],
+      "complete": true,
+      "passed": true
+    },
+    {
+      "name": "partial-users",
+      "rules": [
+        "collection-incomplete"
+      ],
+      "complete": false,
+      "passed": true
+    },
+    {
+      "name": "partial-groups",
+      "rules": [
+        "collection-incomplete"
+      ],
+      "complete": false,
+      "passed": true
+    },
+    {
+      "name": "partial-members",
+      "rules": [
+        "membership-unknown"
+      ],
+      "complete": false,
+      "passed": true
+    },
+    {
+      "name": "missing-group",
+      "rules": [
+        "protected-group-missing"
+      ],
+      "complete": false,
+      "passed": true
+    },
+    {
+      "name": "unresolved-member",
+      "rules": [
+        "membership-unknown",
+        "unresolved-principal"
+      ],
+      "complete": false,
+      "passed": true
+    },
+    {
+      "name": "external-group",
+      "rules": [
+        "membership-unknown"
+      ],
+      "complete": false,
+      "passed": true
+    },
+    {
+      "name": "nested-approved",
+      "rules": [],
+      "complete": true,
+      "passed": true
+    },
+    {
+      "name": "nested-unapproved",
+      "rules": [
+        "unapproved-membership"
+      ],
+      "complete": true,
+      "passed": true
+    },
+    {
+      "name": "cycle",
+      "rules": [
+        "membership-cycle"
+      ],
+      "complete": false,
+      "passed": true
+    },
+    {
+      "name": "diamond",
+      "rules": [],
+      "complete": true,
+      "passed": true
+    },
+    {
+      "name": "active-exception",
+      "rules": [],
+      "complete": true,
+      "passed": true
+    },
+    {
+      "name": "expired-exception",
+      "rules": [
+        "exception-expired",
+        "unapproved-membership"
+      ],
+      "complete": true,
+      "passed": true
+    },
+    {
+      "name": "broad-approved",
+      "rules": [
+        "broad-membership"
+      ],
+      "complete": true,
+      "passed": true
+    },
+    {
+      "name": "unknown-enabled",
+      "rules": [
+        "account-state-unknown"
+      ],
+      "complete": false,
+      "passed": true
+    },
+    {
+      "name": "unknown-password",
+      "rules": [
+        "account-history-unknown"
+      ],
+      "complete": false,
+      "passed": true
+    },
+    {
+      "name": "nonlocal-hygiene",
+      "rules": [],
+      "complete": true,
+      "passed": true
+    },
+    {
+      "name": "unknown-source",
+      "rules": [
+        "account-source-unknown"
+      ],
+      "complete": false,
+      "passed": true
+    }
+  ],
+  "source": {
+    "accepted_commit": "d473eaa08375d4211f8977ffdbf1777579eb6067",
+    "run_url": "https://github.com/JasonStys/windows-identity-audit-lab/actions/runs/38622550659",
+    "job_url": "https://github.com/JasonStys/windows-identity-audit-lab/actions/runs/38622550659/job/116053456796"
+  }
+}

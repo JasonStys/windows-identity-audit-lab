@@ -1,0 +1,16 @@
+{
+  "author": "Jason Stys",
+  "accepted_commit": "d473eaa08375d4211f8977ffdbf1777579eb6067",
+  "run_url": "https://github.com/JasonStys/windows-identity-audit-lab/actions/runs/38622550659",
+  "job_url": "https://github.com/JasonStys/windows-identity-audit-lab/actions/runs/38622550659/job/116053456194",
+  "powershell": "7.6.6",
+  "analyzer": "1.25.0",
+  "checks": 29,
+  "synthetic_assertions": 24,
+  "static_analysis_assertions": 1,
+  "native_assertions": 4,
+  "native_schema_valid": true,
+  "private_fields_logged": false,
+  "analyzer_sha256": "14e634c828eb98efb9f40b2918ba90f139ed5eccdf663a2a747736d996995d60",
+  "scope": "Disposable Windows GitHub runner; no user PC collection or account changes."
+}

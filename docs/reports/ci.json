@@ -1,0 +1,90 @@
+{
+  "author": "Jason Stys",
+  "accepted_commit": "d473eaa08375d4211f8977ffdbf1777579eb6067",
+  "workflows": [
+    {
+      "name": "Validate",
+      "run_id": 38622550659,
+      "url": "https://github.com/JasonStys/windows-identity-audit-lab/actions/runs/38622550659",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 116053456194,
+          "name": "Windows native collector + PowerShell analysis",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/windows-identity-audit-lab/actions/runs/38622550659/job/116053456194"
+        },
+        {
+          "id": 116053456589,
+          "name": "Locked graph + secrets + workflows",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/windows-identity-audit-lab/actions/runs/38622550659/job/116053456589"
+        },
+        {
+          "id": 116053456689,
+          "name": "Identity evidence / macos-15-intel / 3.14",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/windows-identity-audit-lab/actions/runs/38622550659/job/116053456689"
+        },
+        {
+          "id": 116053456796,
+          "name": "Identity evidence / ubuntu-24.04 / 3.14",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/windows-identity-audit-lab/actions/runs/38622550659/job/116053456796"
+        },
+        {
+          "id": 116053456868,
+          "name": "Identity evidence / ubuntu-24.04 / 3.12",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/windows-identity-audit-lab/actions/runs/38622550659/job/116053456868"
+        },
+        {
+          "id": 116053457197,
+          "name": "Identity evidence / windows-latest / 3.14",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/windows-identity-audit-lab/actions/runs/38622550659/job/116053457197"
+        }
+      ]
+    },
+    {
+      "name": "CodeQL",
+      "run_id": 38622550750,
+      "url": "https://github.com/JasonStys/windows-identity-audit-lab/actions/runs/38622550750",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 116053456282,
+          "name": "CodeQL / Python",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/windows-identity-audit-lab/actions/runs/38622550750/job/116053456282"
+        }
+      ]
+    }
+  ],
+  "python_validation": {
+    "tests_per_platform": 95,
+    "skips": 0,
+    "statements": 345,
+    "branches": 134,
+    "coverage_percent": 100,
+    "matrix": [
+      "Ubuntu 24.04 / Python 3.12",
+      "Ubuntu 24.04 / Python 3.14",
+      "Windows / Python 3.14",
+      "macOS Intel / Python 3.14"
+    ]
+  },
+  "security": {
+    "python_dependency_audit": "no known vulnerabilities",
+    "gitleaks": "no leaks found",
+    "actionlint": "passed",
+    "open_codeql_alerts": 0
+  },
+  "corrected_run": {
+    "id": 38622279121,
+    "conclusion": "failure",
+    "reason": "Native Windows job lacked PYTHONPATH for collector JSON handoff; native collector assertions passed, Python import failed.",
+    "preserved": true
+  },
+  "note": "Immutable accepted implementation evidence. Final documentation commit reruns the same gates; check live main status."
+}

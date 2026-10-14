@@ -1,0 +1,17 @@
+{
+  "author": "Jason Stys",
+  "python": "3.14.8",
+  "system": "Linux",
+  "members": 1000,
+  "findings": 999,
+  "samples": 15,
+  "median_ms": 4.531822,
+  "min_ms": 4.275989,
+  "max_ms": 7.746849,
+  "python_peak_bytes": 221928,
+  "source": {
+    "accepted_commit": "d473eaa08375d4211f8977ffdbf1777579eb6067",
+    "run_url": "https://github.com/JasonStys/windows-identity-audit-lab/actions/runs/38622550659",
+    "job_url": "https://github.com/JasonStys/windows-identity-audit-lab/actions/runs/38622550659/job/116053456796"
+  }
+}
