@@ -65,6 +65,7 @@ Accepted implementation validation: **95 tests / 100% Python statement-and-branc
 | [docs/reports/ci.json](docs/reports/ci.json) | Actual immutable accepted-source CI snapshot. |
 | [docs/reports/evaluation.json](docs/reports/evaluation.json) | Measured fixed synthetic scenario outcomes. |
 | [docs/reports/example.html](docs/reports/example.html) | Inert synthetic analyst report. |
+| [docs/reports/portfolio-sync-2026-10-22.md](docs/reports/portfolio-sync-2026-10-22.md) | <!-- File: docs/reports/portfolio-sync-2026-10-22.md; Purpose: certificate-bundle security repair and evidence by Jason Stys. -->. |
 | [docs/reports/powershell.json](docs/reports/powershell.json) | Actual synthetic and disposable-runner Windows validation. |
 | [docs/research.md](docs/research.md) | Primary-source research notes. |
 | [docs/review.md](docs/review.md) | Code review and release checklist. |
