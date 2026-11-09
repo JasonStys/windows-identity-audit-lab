@@ -1,13 +1,15 @@
 """Jason Stys: offline audit/diff command line with content-free diagnostics and explicit reference time."""
 # BEGIN CODE MAP (generated; python scripts/code_map.py)
-# definition: main — line 26
-# parameter: argv — line 26
-# variable: parser — line 28
-# variable: commands — line 31
-# variable: review — line 32
-# variable: diff — line 37
-# variable: args — line 40
-# variable: result — line 53
+# definition: main — line 29
+# parameter: argv — line 29
+# variable: parser — line 31
+# variable: commands — line 34
+# variable: review — line 35
+# variable: diff — line 40
+# variable: recertification — line 43
+# variable: args — line 50
+# variable: recertified — line 53
+# variable: result — line 85
 # END CODE MAP
 
 from __future__ import annotations
@@ -21,6 +23,7 @@ from pathlib import Path
 from identitylab.audit import audit, compare
 from identitylab.contracts import parse_policy, parse_snapshot, read_json, timestamp
 from identitylab.evidence import write_bundle
+from identitylab.recertify import publish, recertify
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -37,8 +40,37 @@ def main(argv: list[str] | None = None) -> int:
     diff = commands.add_parser("diff")
     diff.add_argument("--before", type=Path, required=True)
     diff.add_argument("--after", type=Path, required=True)
+    recertification = commands.add_parser("recertify")
+    recertification.add_argument("--before", type=Path, required=True)
+    recertification.add_argument("--after", type=Path, required=True)
+    recertification.add_argument("--policy", type=Path, required=True)
+    recertification.add_argument("--as-of", required=True)
+    recertification.add_argument("--horizon-hours", type=int, default=24)
+    recertification.add_argument("--output", type=Path, required=True)
     args = parser.parse_args(argv)
     try:
+        if args.command == "recertify":
+            recertified = recertify(
+                args.before,
+                args.after,
+                args.policy,
+                timestamp(args.as_of),
+                args.horizon_hours,
+            )
+            publish(recertified, args.output)
+            print(
+                json.dumps(
+                    {
+                        "nested_memberships": len(recertified["nested_paths"]),
+                        "review_items": len(recertified["review_queue"]),
+                        "complete": recertified["current_audit"]["complete"],
+                    }
+                )
+            )
+            return int(
+                bool(recertified["review_queue"])
+                or not recertified["current_audit"]["complete"]
+            )
         if args.command == "diff":
             print(
                 json.dumps(
