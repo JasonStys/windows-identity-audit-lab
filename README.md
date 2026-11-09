@@ -27,6 +27,16 @@ The synthetic example deliberately returns **1** (three review findings), not a 
 
 For tests: `python -m pip install --require-hashes -r requirements-dev.lock`, then `python -m pytest --cov=identitylab`. On Windows, `pwsh -NoProfile -File powershell/Test-Identity.ps1` runs synthetic collector tests without native account enumeration.
 
+## Review nested membership and expiring exceptions
+
+```powershell
+python -m identitylab.cli recertify --before private/before.json --after private/after.json --policy private/policy.json --as-of 2026-10-15T00:00:00Z --horizon-hours 24 --output out/recertification
+```
+
+This read-only worklist preserves the original current audit and direct-edge drift, then compares deterministic shortest protected-group SID paths. A different nested path is distinguished from a newly added or removed exposure. Partial/unresolved/cyclic membership yields **not observed, unverified**, never proof of revoked access. Source snapshots must be for the same host with strictly increasing collection time; JSON-semantic hashes bind the reviewed inputs.
+
+Current user memberships enter an explicit owner recertification queue even when already approved; disabled membership remains latent exposure. Active exceptions, unapproved memberships and expired/expiring tickets are separate, with a bounded1–168hour lookahead. Unassigned ownership is visible. Approval cannot suppress the original broad-principal warning, incomplete evidence or account-hygiene findings. No approval is renewed and no account changed. Output contains sensitive SIDs and must remain private. The command returns1 for review work,2 for invalid/operational errors, and writes a new inert HTML/JSON bundle for inspection.
+
 ## Authorized collection
 
 Read the [privacy and threat model](docs/security.md) and [runbook](docs/runbook.md) first. Use an owner-protected directory outside Git; provide a nonpersonal host alias. SIDs remain sensitive. Do not upload real snapshots or generated bundles. The collector never uploads files and never contacts a directory service.
@@ -67,6 +77,7 @@ Accepted implementation validation: **95 tests / 100% Python statement-and-branc
 | [docs/reports/example.html](docs/reports/example.html) | Inert synthetic analyst report. |
 | [docs/reports/portfolio-sync-2026-10-22.md](docs/reports/portfolio-sync-2026-10-22.md) | <!-- File: docs/reports/portfolio-sync-2026-10-22.md; Purpose: certificate-bundle security repair and evidence by Jason Stys. -->. |
 | [docs/reports/powershell.json](docs/reports/powershell.json) | Actual synthetic and disposable-runner Windows validation. |
+| [docs/reports/recertification-2026-11-09.md](docs/reports/recertification-2026-11-09.md) | Nested membership recertification validation — November 9, 2026. |
 | [docs/research.md](docs/research.md) | Primary-source research notes. |
 | [docs/review.md](docs/review.md) | Code review and release checklist. |
 | [docs/runbook.md](docs/runbook.md) | Operator runbook and troubleshooting. |
@@ -81,6 +92,7 @@ Accepted implementation validation: **95 tests / 100% Python statement-and-branc
 | [identitylab/cli.py](identitylab/cli.py) | Jason Stys: offline audit/diff command line with content-free diagnostics and explicit reference time. |
 | [identitylab/contracts.py](identitylab/contracts.py) | Jason Stys: strict bounded SID-centric snapshot and policy contracts, with explicit unknown evidence. |
 | [identitylab/evidence.py](identitylab/evidence.py) | Jason Stys: fresh private review bundles, parameterized SQLite evidence and inert escaped HTML. |
+| [identitylab/recertify.py](identitylab/recertify.py) | Jason Stys: conservative nested protected-membership drift and exception recertification worklist. |
 | [powershell/Collect-Identity.ps1](powershell/Collect-Identity.ps1) | Jason Stys: explicit owner-authorized local snapshot to a fresh private file; never uploaded by this script. |
 | [powershell/Get-CodeSymbols.ps1](powershell/Get-CodeSymbols.ps1) | Jason Stys: parse-only PowerShell AST symbol map; never executes source supplied on stdin. |
 | [powershell/IdentitySnapshot.psm1](powershell/IdentitySnapshot.psm1) | Jason Stys: authorized read-only LocalAccounts collector; SID-only output with explicit partial evidence. |
@@ -101,6 +113,7 @@ Accepted implementation validation: **95 tests / 100% Python statement-and-branc
 | [tests/test\_audit.py](tests/test_audit.py) | Jason Stys: independent exact scenario oracles, graph safety, approval boundaries and conservative snapshot diffs. |
 | [tests/test\_contracts.py](tests/test_contracts.py) | Jason Stys: adversarial schema/SID/time/JSON boundaries and property-based canonical identifier checks. |
 | [tests/test\_evidence.py](tests/test_evidence.py) | Jason Stys: private no-overwrite bundles, SQL injection safety, escaped HTML and actual CLI round trips. |
+| [tests/test\_recertify.py](tests/test_recertify.py) | Jason Stys: independent nested exposure, partial-evidence and expiry worklist oracles. |
 | [tools.lock.json](tools.lock.json) | Official Linux scanner versions, URLs and SHA256 digests. |
 
 <!-- END FILE GUIDE -->
