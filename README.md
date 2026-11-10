@@ -70,13 +70,17 @@ Accepted implementation validation: **95 tests / 100% Python statement-and-branc
 | [docs/architecture.md](docs/architecture.md) | Architecture and ADR-001: local collection, offline review. |
 | [docs/coding.md](docs/coding.md) | Coding and documentation conventions. |
 | [docs/contracts.md](docs/contracts.md) | Contracts and rule semantics. |
+| [docs/handbook.md](docs/handbook.md) | Windows Identity Audit Lab handbook. |
 | [docs/performance.md](docs/performance.md) | Performance and complexity. |
 | [docs/reports/benchmark.json](docs/reports/benchmark.json) | Measured bounded graph audit latency and Python allocation peak. |
 | [docs/reports/ci.json](docs/reports/ci.json) | Actual immutable accepted-source CI snapshot. |
+| [docs/reports/documentation-refresh-2026-11-09.md](docs/reports/documentation-refresh-2026-11-09.md) | Documentation refresh — 2026-11-09. |
 | [docs/reports/evaluation.json](docs/reports/evaluation.json) | Measured fixed synthetic scenario outcomes. |
 | [docs/reports/example.html](docs/reports/example.html) | Inert synthetic analyst report. |
 | [docs/reports/portfolio-sync-2026-10-22.md](docs/reports/portfolio-sync-2026-10-22.md) | <!-- File: docs/reports/portfolio-sync-2026-10-22.md; Purpose: certificate-bundle security repair and evidence by Jason Stys. -->. |
 | [docs/reports/powershell.json](docs/reports/powershell.json) | Actual synthetic and disposable-runner Windows validation. |
+| [docs/reports/project-guide.docx](docs/reports/project-guide.docx) | Reviewed Word project guide with source revision and dated validation scope. |
+| [docs/reports/publications.json](docs/reports/publications.json) | Exact reviewed Office file identities, immutable source baseline and workflow observations. |
 | [docs/reports/recertification-2026-11-09.md](docs/reports/recertification-2026-11-09.md) | Nested membership recertification validation — November 9, 2026. |
 | [docs/research.md](docs/research.md) | Primary-source research notes. |
 | [docs/review.md](docs/review.md) | Code review and release checklist. |
@@ -113,7 +117,14 @@ Accepted implementation validation: **95 tests / 100% Python statement-and-branc
 | [tests/test\_audit.py](tests/test_audit.py) | Jason Stys: independent exact scenario oracles, graph safety, approval boundaries and conservative snapshot diffs. |
 | [tests/test\_contracts.py](tests/test_contracts.py) | Jason Stys: adversarial schema/SID/time/JSON boundaries and property-based canonical identifier checks. |
 | [tests/test\_evidence.py](tests/test_evidence.py) | Jason Stys: private no-overwrite bundles, SQL injection safety, escaped HTML and actual CLI round trips. |
+| [tests/test\_publication\_privacy.py](tests/test_publication_privacy.py) | Jason Stys: credentials in actual Word XML remain visible to repository privacy checks. |
 | [tests/test\_recertify.py](tests/test_recertify.py) | Jason Stys: independent nested exposure, partial-evidence and expiry worklist oracles. |
 | [tools.lock.json](tools.lock.json) | Official Linux scanner versions, URLs and SHA256 digests. |
 
 <!-- END FILE GUIDE -->
+
+## Documentation editions
+
+Start with the [organized handbook](docs/handbook.md) for current usage, design, security and test guidance. Reviewed downloadable editions: [project-guide.docx](docs/reports/project-guide.docx).
+
+[Publication identities and source scope](docs/reports/publications.json) · [Documentation validation record](docs/reports/documentation-refresh-2026-11-09.md). Historical results retain their own tested revision and date.
