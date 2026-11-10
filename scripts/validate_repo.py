@@ -6,22 +6,22 @@
 # variable: archive — line 39
 # variable: entries — line 40
 # variable: item — line 43
-# variable: item — line 47
-# variable: item — line 53
-# definition: main — line 58
-# variable: names — line 60
-# variable: name — line 66
-# variable: part — line 69
-# variable: path — line 76
-# variable: text — line 79
-# variable: imports — line 92
-# variable: node — line 93
-# variable: alias — line 95
-# variable: path — line 111
-# variable: text — line 112
-# variable: action — line 119
-# variable: codeql — line 122
-# variable: flag — line 123
+# variable: item — line 49
+# variable: item — line 55
+# definition: main — line 60
+# variable: names — line 62
+# variable: name — line 68
+# variable: part — line 71
+# variable: path — line 78
+# variable: text — line 81
+# variable: imports — line 94
+# variable: node — line 95
+# variable: alias — line 97
+# variable: path — line 113
+# variable: text — line 114
+# variable: action — line 121
+# variable: codeql — line 124
+# variable: flag — line 125
 # END CODE MAP
 
 import ast
@@ -43,7 +43,9 @@ def publication_text(path: Path) -> str:
             or sum(item.file_size for item in entries) > 16 * 1024 * 1024
             or "word/document.xml" not in archive.namelist()
             or any(
-                item.flag_bits & 1 or "vbaproject" in item.filename.lower()
+                item.flag_bits & 1
+                or "vbaproject" in item.filename.lower()
+                or "/embeddings/" in item.filename.lower()
                 for item in entries
             )
         ):

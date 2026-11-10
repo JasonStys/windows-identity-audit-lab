@@ -77,6 +77,7 @@ Accepted implementation validation: **95 tests / 100% Python statement-and-branc
 | [docs/reports/documentation-refresh-2026-11-09.md](docs/reports/documentation-refresh-2026-11-09.md) | Documentation refresh — 2026-11-09. |
 | [docs/reports/evaluation.json](docs/reports/evaluation.json) | Measured fixed synthetic scenario outcomes. |
 | [docs/reports/example.html](docs/reports/example.html) | Inert synthetic analyst report. |
+| [docs/reports/office-input-boundary-2026-11-10.md](docs/reports/office-input-boundary-2026-11-10.md) | Documentation input boundary review — 2026-11-10. |
 | [docs/reports/portfolio-sync-2026-10-22.md](docs/reports/portfolio-sync-2026-10-22.md) | <!-- File: docs/reports/portfolio-sync-2026-10-22.md; Purpose: certificate-bundle security repair and evidence by Jason Stys. -->. |
 | [docs/reports/powershell.json](docs/reports/powershell.json) | Actual synthetic and disposable-runner Windows validation. |
 | [docs/reports/project-guide.docx](docs/reports/project-guide.docx) | Reviewed Word project guide with source revision and dated validation scope. |
