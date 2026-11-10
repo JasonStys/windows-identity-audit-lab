@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "project": "windows-identity-audit-lab",
+  "author": "Jason Stys",
+  "editionDate": "2026-11-09",
+  "sourceBaseline": "b82073c8ae41450b917ec7b3dde9eca40d7d30ea",
+  "sourceUrl": "https://github.com/JasonStys/windows-identity-audit-lab/tree/b82073c8ae41450b917ec7b3dde9eca40d7d30ea",
+  "functionalEvidenceBaseline": "b82073c8ae41450b917ec7b3dde9eca40d7d30ea",
+  "evidenceObservedAt": "2026-11-10T05:25:40.628667+00:00",
+  "workflowEvidence": [
+    {
+      "conclusion": "success",
+      "databaseId": 42714809490,
+      "event": "push",
+      "headSha": "b82073c8ae41450b917ec7b3dde9eca40d7d30ea",
+      "name": "Validate",
+      "status": "completed",
+      "url": "https://github.com/JasonStys/windows-identity-audit-lab/actions/runs/42714809490"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 42714809439,
+      "event": "push",
+      "headSha": "b82073c8ae41450b917ec7b3dde9eca40d7d30ea",
+      "name": "CodeQL",
+      "status": "completed",
+      "url": "https://github.com/JasonStys/windows-identity-audit-lab/actions/runs/42714809439"
+    }
+  ],
+  "summary": "Review nested protected-identity exposure, representative paths, source completeness and owner recertification/expiry queues.",
+  "rationale": "Keeps complete exposure separate from newly observed drift and avoids false removal claims from partial snapshots.",
+  "limitations": [
+    "SID evidence can be identifying private plaintext; it does not prove effective access or successful revocation.",
+    "Exposure reports show one shortest representative path, not every possible nested path.",
+    "Absence in partial, unresolved or cyclic evidence is unverified; recertification is not automatically renewed."
+  ],
+  "documents": [
+    {
+      "filename": "project-guide.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 44306,
+      "sha256": "e684f73dc7638fbf1f7641800b8c02abdf7af348def6ab1de3abf328d55ebfe3",
+      "sourceBaseline": "b82073c8ae41450b917ec7b3dde9eca40d7d30ea",
+      "visualReview": {
+        "approved": true,
+        "method": "Every rendered page individually viewed at readable original resolution",
+        "pageCount": 5,
+        "renderedPageSha256": {
+          "page-1.png": "b13c2f95c22a3bcd3d0eef42f6b99b11b1724756d7eebf2f68171d82020617a2",
+          "page-2.png": "4ad0fc98acd6966f95974e7333fa759574e51f5348f62f5464c06c21788dde3d",
+          "page-3.png": "f5915f460850c65f5036591c748e3ff9646fc59ab95d15b267027ff3388be4e6",
+          "page-4.png": "5549b65633964a843e941641dc9bb5e61d21123c301f84e7ab774f39cb1e831e",
+          "page-5.png": "d15ead376a08a6aa356ec68c8d6bb9ea108faf077cb042888b8491479e5c2a5d"
+        }
+      }
+    }
+  ],
+  "scope": "Reviewed documentation editions of the cited source. Checksums identify bytes, not authorship. Historical measurements retain their own dates; integration CI must be checked separately."
+}

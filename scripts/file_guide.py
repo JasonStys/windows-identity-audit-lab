@@ -4,27 +4,27 @@
 # variable: BEGIN — line 36
 # variable: END — line 36
 # variable: SPECIAL — line 37
-# definition: purpose — line 53
-# parameter: name — line 53
-# variable: text — line 57
-# variable: lines — line 62
-# variable: index — line 63
-# variable: line — line 63
-# variable: description — line 65
-# variable: continuation — line 67
-# variable: description — line 73
-# definition: main — line 78
-# variable: parser — line 80
-# variable: args — line 82
-# variable: names — line 83
-# variable: rows — line 91
-# variable: name — line 92
-# variable: label — line 93
-# variable: path — line 95
-# variable: original — line 96
-# variable: end — line 97
-# variable: start — line 97
-# variable: expected — line 98
+# definition: purpose — line 55
+# parameter: name — line 55
+# variable: text — line 59
+# variable: lines — line 64
+# variable: index — line 65
+# variable: line — line 65
+# variable: description — line 67
+# variable: continuation — line 69
+# variable: description — line 75
+# definition: main — line 80
+# variable: parser — line 82
+# variable: args — line 84
+# variable: names — line 85
+# variable: rows — line 93
+# variable: name — line 94
+# variable: label — line 95
+# variable: path — line 97
+# variable: original — line 98
+# variable: end — line 99
+# variable: start — line 99
+# variable: expected — line 100
 # END CODE MAP
 
 import argparse
@@ -35,6 +35,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 BEGIN, END = "<!-- BEGIN FILE GUIDE -->", "<!-- END FILE GUIDE -->"
 SPECIAL = {
+    "docs/reports/project-guide.docx": "Reviewed Word project guide with source revision and dated validation scope.",
+    "docs/reports/publications.json": "Exact reviewed Office file identities, immutable source baseline and workflow observations.",
     ".gitignore": "Exclude private identity snapshots, databases, outputs and tool caches.",
     ".gitattributes": "Consistent LF text checkouts across operating systems.",
     "LICENSE": "MIT license for Jason Stys's authored code.",

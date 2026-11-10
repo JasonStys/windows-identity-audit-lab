@@ -1,20 +1,27 @@
 """Jason Stys: tracked-file privacy, offline-runtime imports and zero-artifact/cache workflow guards."""
 # BEGIN CODE MAP (generated; python scripts/code_map.py)
-# variable: ROOT — line 26
-# definition: main — line 29
-# variable: names — line 31
-# variable: name — line 37
-# variable: part — line 40
-# variable: path — line 47
-# variable: text — line 50
-# variable: imports — line 59
-# variable: node — line 60
-# variable: alias — line 62
-# variable: path — line 78
+# variable: ROOT — line 34
+# definition: publication_text — line 37
+# parameter: path — line 37
+# variable: archive — line 39
+# variable: entries — line 40
+# variable: item — line 43
+# variable: item — line 47
+# variable: item — line 53
+# definition: main — line 58
+# variable: names — line 60
+# variable: name — line 66
+# variable: part — line 69
+# variable: path — line 76
 # variable: text — line 79
-# variable: action — line 86
-# variable: codeql — line 89
-# variable: flag — line 90
+# variable: imports — line 92
+# variable: node — line 93
+# variable: alias — line 95
+# variable: path — line 111
+# variable: text — line 112
+# variable: action — line 119
+# variable: codeql — line 122
+# variable: flag — line 123
 # END CODE MAP
 
 import ast
@@ -22,8 +29,30 @@ import json
 import re
 import subprocess
 from pathlib import Path
+from zipfile import ZipFile
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def publication_text(path: Path) -> str:
+    """Read bounded non-macro Word XML for the existing secret scan; reject malformed packages."""
+    with ZipFile(path) as archive:
+        entries = archive.infolist()
+        if (
+            len(entries) > 512
+            or sum(item.file_size for item in entries) > 16 * 1024 * 1024
+            or "word/document.xml" not in archive.namelist()
+            or any(
+                item.flag_bits & 1 or "vbaproject" in item.filename.lower()
+                for item in entries
+            )
+        ):
+            raise ValueError("Invalid or oversized Word documentation package")
+        return "\n".join(
+            archive.read(item).decode("utf-8")
+            for item in entries
+            if item.filename.endswith((".xml", ".rels"))
+        )
 
 
 def main() -> None:
@@ -47,7 +76,11 @@ def main() -> None:
         path = ROOT / name
         if path.is_symlink() or path.is_junction():
             raise ValueError("tracked links are forbidden")
-        text = path.read_text(encoding="utf-8")
+        text = (
+            publication_text(path)
+            if name == "docs/reports/project-guide.docx"
+            else path.read_text(encoding="utf-8")
+        )
         if re.search(
             r"(?:ghp_|github_pat_|sk-proj-)[A-Za-z0-9_]{12,}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----",
             text,
