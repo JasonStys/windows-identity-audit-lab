@@ -15,3 +15,7 @@ The collector preserves null metadata and component/group failures. No names/des
 Collection spans time: start timestamp is not an atomic OS snapshot. Concurrent account changes can make evidence inconsistent. No directory lookup, native token/access check, user-right assignment, ACL evaluation or security-event ingestion is implemented.
 
 No dependency injection framework, persistent daemon, database server or browser frontend is necessary. Shallow folders keep the lab inspectable.
+
+## Native workbench 1.1.0
+
+[Native usage, offline data boundary, packaging and real-widget validation](native-workbench.md). The CLI and original validation gates remain; supplied evidence is never live enforcement or a security/authorization approval. Historical report measurements remain dated observations of their recorded sources.

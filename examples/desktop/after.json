@@ -1,0 +1,58 @@
+{
+  "captured": "2026-10-15T00:00:00Z",
+  "groups_complete": true,
+  "host": "LAB-WIN",
+  "principals": [
+    {
+      "enabled": null,
+      "expires": null,
+      "kind": "group",
+      "last_logon": null,
+      "members": [
+        "S-1-5-21-900-800-700-2001",
+        "S-1-5-21-100-200-300-1002"
+      ],
+      "members_complete": true,
+      "password_required": null,
+      "sid": "S-1-5-32-544",
+      "source": "local"
+    },
+    {
+      "enabled": true,
+      "expires": null,
+      "kind": "user",
+      "last_logon": "2026-10-01T00:00:00Z",
+      "members": [],
+      "members_complete": false,
+      "password_required": true,
+      "sid": "S-1-5-21-100-200-300-1001",
+      "source": "local"
+    },
+    {
+      "enabled": null,
+      "expires": null,
+      "kind": "group",
+      "last_logon": null,
+      "members": [
+        "S-1-5-21-100-200-300-1001"
+      ],
+      "members_complete": true,
+      "password_required": null,
+      "sid": "S-1-5-21-900-800-700-2001",
+      "source": "local"
+    },
+    {
+      "enabled": true,
+      "expires": null,
+      "kind": "user",
+      "last_logon": "2026-10-01T00:00:00Z",
+      "members": [],
+      "members_complete": false,
+      "password_required": true,
+      "sid": "S-1-5-21-100-200-300-1002",
+      "source": "local"
+    }
+  ],
+  "schema": 1,
+  "users_complete": true
+}

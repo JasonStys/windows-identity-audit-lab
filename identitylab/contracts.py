@@ -1,110 +1,113 @@
 """Jason Stys: strict bounded SID-centric snapshot and policy contracts, with explicit unknown evidence."""
 # BEGIN CODE MAP (generated; python scripts/code_map.py)
-# variable: MAX_BYTES — line 113
-# variable: MAX_PRINCIPALS — line 114
-# variable: MAX_EDGES — line 115
-# variable: SOURCES — line 116
-# definition: Principal — line 120
-# variable: sid — line 123
-# variable: kind — line 124
-# variable: source — line 125
-# variable: enabled — line 126
-# variable: password_required — line 127
-# variable: last_logon — line 128
-# variable: expires — line 129
-# variable: members — line 130
-# variable: members_complete — line 131
-# definition: Snapshot — line 135
-# variable: host — line 138
-# variable: captured — line 139
-# variable: users_complete — line 140
-# variable: groups_complete — line 141
-# variable: principals — line 142
-# definition: ExceptionGrant — line 146
-# variable: group — line 149
-# variable: principal — line 150
-# variable: ticket — line 151
-# variable: expires — line 152
-# definition: Policy — line 156
-# variable: host — line 159
-# variable: protected — line 160
-# variable: approved — line 161
-# variable: exceptions — line 162
-# variable: stale_days — line 163
-# variable: max_age_hours — line 164
-# definition: sid — line 167
-# parameter: value — line 167
-# variable: part — line 173
-# variable: parts — line 173
-# variable: part — line 174
-# definition: timestamp — line 179
-# parameter: value — line 179
-# variable: result — line 184
-# definition: fields — line 195
-# parameter: expected — line 195
-# parameter: value — line 195
-# definition: boolean — line 202
-# parameter: nullable — line 202
-# parameter: value — line 202
-# definition: integer — line 211
-# parameter: lower — line 211
-# parameter: upper — line 211
-# parameter: value — line 211
-# definition: sequence — line 218
-# parameter: limit — line 218
-# parameter: value — line 218
-# definition: alias — line 225
-# parameter: value — line 225
-# definition: parse_snapshot — line 234
-# parameter: value — line 234
-# variable: data — line 236
-# variable: captured — line 249
-# variable: principals — line 250
-# variable: item — line 251
-# variable: row — line 252
-# variable: member — line 273
-# variable: members — line 273
-# variable: enabled — line 276
-# variable: required — line 277
-# variable: last — line 278
-# variable: expires — line 279
-# variable: complete — line 282
-# variable: item — line 286
-# variable: item — line 303
-# variable: item — line 304
-# parameter: item — line 312
-# definition: parse_policy — line 316
-# parameter: value — line 316
-# variable: data — line 318
-# variable: item — line 322
-# variable: protected — line 322
-# variable: approved — line 325
-# variable: item — line 326
-# variable: row — line 327
-# variable: exceptions — line 329
-# variable: item — line 330
-# variable: row — line 331
-# variable: item — line 340
-# variable: pairs — line 340
-# variable: _ — line 342
-# variable: group — line 342
-# definition: unique_pairs — line 355
-# parameter: pairs — line 355
-# variable: result — line 357
-# variable: key — line 358
-# variable: value — line 358
-# definition: read_json — line 365
-# parameter: path — line 365
-# variable: stream — line 369
-# variable: data — line 370
-# definition: reject_constant — line 383
-# parameter: value — line 383
+# variable: MAX_BYTES — line 116
+# variable: MAX_PRINCIPALS — line 117
+# variable: MAX_EDGES — line 118
+# variable: SOURCES — line 119
+# definition: Principal — line 123
+# variable: sid — line 126
+# variable: kind — line 127
+# variable: source — line 128
+# variable: enabled — line 129
+# variable: password_required — line 130
+# variable: last_logon — line 131
+# variable: expires — line 132
+# variable: members — line 133
+# variable: members_complete — line 134
+# definition: Snapshot — line 138
+# variable: host — line 141
+# variable: captured — line 142
+# variable: users_complete — line 143
+# variable: groups_complete — line 144
+# variable: principals — line 145
+# definition: ExceptionGrant — line 149
+# variable: group — line 152
+# variable: principal — line 153
+# variable: ticket — line 154
+# variable: expires — line 155
+# definition: Policy — line 159
+# variable: host — line 162
+# variable: protected — line 163
+# variable: approved — line 164
+# variable: exceptions — line 165
+# variable: stale_days — line 166
+# variable: max_age_hours — line 167
+# definition: sid — line 170
+# parameter: value — line 170
+# variable: part — line 176
+# variable: parts — line 176
+# variable: part — line 177
+# definition: timestamp — line 182
+# parameter: value — line 182
+# variable: result — line 187
+# definition: fields — line 198
+# parameter: expected — line 198
+# parameter: value — line 198
+# definition: boolean — line 205
+# parameter: nullable — line 205
+# parameter: value — line 205
+# definition: integer — line 214
+# parameter: lower — line 214
+# parameter: upper — line 214
+# parameter: value — line 214
+# definition: sequence — line 221
+# parameter: limit — line 221
+# parameter: value — line 221
+# definition: alias — line 228
+# parameter: value — line 228
+# definition: parse_snapshot — line 237
+# parameter: value — line 237
+# variable: data — line 239
+# variable: captured — line 252
+# variable: principals — line 253
+# variable: item — line 254
+# variable: row — line 255
+# variable: member — line 276
+# variable: members — line 276
+# variable: enabled — line 279
+# variable: required — line 280
+# variable: last — line 281
+# variable: expires — line 282
+# variable: complete — line 285
+# variable: item — line 289
+# variable: item — line 306
+# variable: item — line 307
+# parameter: item — line 315
+# definition: parse_policy — line 319
+# parameter: value — line 319
+# variable: data — line 321
+# variable: item — line 325
+# variable: protected — line 325
+# variable: approved — line 328
+# variable: item — line 329
+# variable: row — line 330
+# variable: exceptions — line 332
+# variable: item — line 333
+# variable: row — line 334
+# variable: item — line 343
+# variable: pairs — line 343
+# variable: _ — line 345
+# variable: group — line 345
+# definition: unique_pairs — line 358
+# parameter: pairs — line 358
+# variable: result — line 360
+# variable: key — line 361
+# variable: value — line 361
+# definition: read_json — line 368
+# parameter: path — line 368
+# variable: descriptor — line 372
+# variable: stream — line 379
+# variable: data — line 382
+# definition: reject_constant — line 395
+# parameter: value — line 395
 # END CODE MAP
 
 from __future__ import annotations
 
 import json
+import os
 import re
+import stat
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
@@ -366,7 +369,16 @@ def read_json(path: Path) -> object:
     """Read bounded regular nonsymlink UTF-8 JSON only; error messages omit input paths/content."""
     if path.is_symlink() or path.is_junction() or not path.is_file():
         raise ValueError("regular input file required")
-    with path.open("rb") as stream:
+    descriptor = os.open(
+        path,
+        os.O_RDONLY
+        | getattr(os, "O_NONBLOCK", 0)
+        | getattr(os, "O_NOFOLLOW", 0)
+        | getattr(os, "O_BINARY", 0),
+    )
+    with os.fdopen(descriptor, "rb") as stream:
+        if not stat.S_ISREG(os.fstat(stream.fileno()).st_mode):
+            raise ValueError("regular opened input required")
         data = stream.read(MAX_BYTES + 1)
     if len(data) > MAX_BYTES:
         raise ValueError("input size cap exceeded")

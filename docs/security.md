@@ -1,5 +1,9 @@
 # Privacy and threat model
 
+## Native offline boundary
+
+The graphical application uses the same strict offline engines. It never launches PowerShell, collects a live host, changes an account or opens a listener. [Native usage and data limits](native-workbench.md) describe the version-independent, plaintext OS-owner profile, immutable retained bundles, explicit deletion and actual two-process validation. This is a local reference tool, not authentication against other processes running as its OS owner or an effective-access decision. Historical report observations retain their original source/date scope.
+
 Author: Jason Stys. Assets: account SIDs, group membership, approval policy, evidence integrity and local host security.
 
 Trust boundaries: native provider to collector; untrusted JSON to strict parser; data to SQL/HTML; private output directory to operator. Uploaded/embedded instructions are never executed. The runtime imports no network or subprocess modules. No telemetry, credentials, directory scanning, account remediation, ads, popups or active HTML.
