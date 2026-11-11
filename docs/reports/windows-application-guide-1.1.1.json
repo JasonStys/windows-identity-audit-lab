@@ -1,0 +1,89 @@
+{
+  "schema": 1,
+  "repository": "windows-identity-audit-lab",
+  "runtimeVersion": "1.1.1",
+  "runtimeSource": "87134618d3c19baeb5d760c4427a14a398244f3c",
+  "createdAt": "2026-11-11T09:42:36.113Z",
+  "author": "Jason Stys",
+  "document": "windows-application-guide-1.1.1.docx",
+  "sha256": "9eee23391b226cc94ebcf28749c558a76897e87209ff5268b60abd029bed6fc7",
+  "screenshots": [
+    {
+      "file": "owner-unknown-review.png",
+      "sha256": "70dac8ac8a4403eb3199f6cbc1c1509d0d75bdb5a18ac6e89ddf2c18fd34ed11",
+      "width": 1276,
+      "height": 899,
+      "caption": "A separate workflow in the same installed workbench preserves its original review state and evidence rather than replacing it with a generic success message."
+    },
+    {
+      "file": "selected-evidence.png",
+      "sha256": "19c56f30b844e02fb5cc2fec98f71b74f5e5f1dbeb10f48dfe062f1128c266c4",
+      "width": 1276,
+      "height": 899,
+      "caption": "The installed workbench displays its accepted analysis and selected original evidence. These are fictional test inputs, not collected production records."
+    }
+  ],
+  "snippets": [
+    {
+      "file": "identitylab/desktop_state.py",
+      "first": 217,
+      "last": 229,
+      "sha256": "6ea8717ed3942a11931326a12a9040b4ee1702b56730deae9deb1a9069e58fad",
+      "url": "https://github.com/JasonStys/windows-identity-audit-lab/blob/87134618d3c19baeb5d760c4427a14a398244f3c/identitylab/desktop_state.py#L217"
+    }
+  ],
+  "observedTests": [
+    {
+      "name": "Actual installed workflows",
+      "observed": "Full original domain, review and export controls passed two normal native launches; all 4 saved bundles retained exact original bytes.",
+      "result": "Passed"
+    },
+    {
+      "name": "Old-to-new profile",
+      "observed": "The actual installed 1.1.0 app created a synthetic profile; installed 1.1.1 reopened it and retained all 4 exact bundles without reset.",
+      "result": "Passed"
+    },
+    {
+      "name": "Source and distribution",
+      "observed": "Exact-main workflows and processed CodeQL passed with zero open main alerts. Five downloaded assets and installed files matched their verified SHA-256 identities.",
+      "result": "Verified"
+    },
+    {
+      "name": "PC and links",
+      "observed": "Existing links were backed up and retargeted with settings retained. Normal profiles and Docker were unchanged; default-profile shortcut activation remains separately untested.",
+      "result": "Verified"
+    }
+  ],
+  "visualReview": {
+    "approved": true,
+    "ooxmlSchema": "passed",
+    "pages": [
+      {
+        "page": 1,
+        "sha256": "deaa525d701a2738028a03dd5dac3becd6467bff3895d3b4b079c2a764d875fa",
+        "approved": true,
+        "method": "Individually inspected final page content"
+      },
+      {
+        "page": 2,
+        "sha256": "407de201bafd328a81743c0745dcf57e4cc50034c9374aa9c0cfaa1bb112c85d",
+        "approved": true,
+        "method": "Individually inspected final page content"
+      },
+      {
+        "page": 3,
+        "sha256": "9d42cf454bfd568ca899428f8abb411c955720b54bbdeca9b0731bd3cdd79d3b",
+        "approved": true,
+        "method": "Individually inspected final page content"
+      },
+      {
+        "page": 4,
+        "sha256": "591e39a298aefa82307bb7794a21cf4854777437bd8d627b4b676b6814a35176",
+        "approved": true,
+        "method": "Individually inspected final page content"
+      }
+    ],
+    "checkedUtc": "2026-11-11T10:22:56.709961+00:00",
+    "method": "All final page content individually inspected by root or named peers; only exact pixel identity carries prior individual inspection."
+  }
+}

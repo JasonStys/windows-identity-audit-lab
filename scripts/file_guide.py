@@ -4,27 +4,27 @@
 # variable: BEGIN — line 36
 # variable: END — line 36
 # variable: SPECIAL — line 37
-# definition: purpose — line 62
-# parameter: name — line 62
-# variable: text — line 66
-# variable: lines — line 71
-# variable: index — line 72
-# variable: line — line 72
-# variable: description — line 74
-# variable: continuation — line 76
-# variable: description — line 82
-# definition: main — line 87
-# variable: parser — line 89
-# variable: args — line 91
-# variable: names — line 92
-# variable: rows — line 100
-# variable: name — line 101
-# variable: label — line 102
-# variable: path — line 104
-# variable: original — line 105
-# variable: end — line 106
-# variable: start — line 106
-# variable: expected — line 107
+# definition: purpose — line 64
+# parameter: name — line 64
+# variable: text — line 68
+# variable: lines — line 73
+# variable: index — line 74
+# variable: line — line 74
+# variable: description — line 76
+# variable: continuation — line 78
+# variable: description — line 84
+# definition: main — line 89
+# variable: parser — line 91
+# variable: args — line 93
+# variable: names — line 94
+# variable: rows — line 102
+# variable: name — line 103
+# variable: label — line 104
+# variable: path — line 106
+# variable: original — line 107
+# variable: end — line 108
+# variable: start — line 108
+# variable: expected — line 109
 # END CODE MAP
 
 import argparse
@@ -35,6 +35,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 BEGIN, END = "<!-- BEGIN FILE GUIDE -->", "<!-- END FILE GUIDE -->"
 SPECIAL = {
+    "docs/reports/windows-application-guide-1.1.1.docx": "Reviewed current 1.1.1 installed-app guide: actual screenshots, workflow, immutable code and measured limits.",
+    "docs/reports/windows-application-guide-1.1.1.json": "Current Word, screenshot, source and individually reviewed rendered-page hashes.",
     "requirements-native.lock": "Exact hash-locked Windows portable build graph; no runtime downloads on user launch.",
     "docs/licenses/tcl-9.0.4.txt": "Actual Tcl9.0.4 runtime notice read from the verified bundled SDK zipfs.",
     "docs/licenses/tk-9.0.4.txt": "Actual Tk9.0.4 runtime notice read from the verified bundled SDK zipfs.",

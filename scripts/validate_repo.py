@@ -14,14 +14,14 @@
 # variable: part — line 71
 # variable: path — line 78
 # variable: text — line 81
-# variable: imports — line 94
-# variable: node — line 95
-# variable: alias — line 97
-# variable: path — line 113
-# variable: text — line 114
-# variable: action — line 121
-# variable: codeql — line 124
-# variable: flag — line 125
+# variable: imports — line 98
+# variable: node — line 99
+# variable: alias — line 101
+# variable: path — line 117
+# variable: text — line 118
+# variable: action — line 125
+# variable: codeql — line 128
+# variable: flag — line 129
 # END CODE MAP
 
 import ast
@@ -80,7 +80,11 @@ def main() -> None:
             raise ValueError("tracked links are forbidden")
         text = (
             publication_text(path)
-            if name == "docs/reports/project-guide.docx"
+            if name
+            in {
+                "docs/reports/project-guide.docx",
+                "docs/reports/windows-application-guide-1.1.1.docx",
+            }
             else path.read_text(encoding="utf-8")
         )
         if re.search(
