@@ -4,27 +4,27 @@
 # variable: BEGIN — line 36
 # variable: END — line 36
 # variable: SPECIAL — line 37
-# definition: purpose — line 55
-# parameter: name — line 55
-# variable: text — line 59
-# variable: lines — line 64
-# variable: index — line 65
-# variable: line — line 65
-# variable: description — line 67
-# variable: continuation — line 69
-# variable: description — line 75
-# definition: main — line 80
-# variable: parser — line 82
-# variable: args — line 84
-# variable: names — line 85
-# variable: rows — line 93
-# variable: name — line 94
-# variable: label — line 95
-# variable: path — line 97
-# variable: original — line 98
-# variable: end — line 99
-# variable: start — line 99
-# variable: expected — line 100
+# definition: purpose — line 62
+# parameter: name — line 62
+# variable: text — line 66
+# variable: lines — line 71
+# variable: index — line 72
+# variable: line — line 72
+# variable: description — line 74
+# variable: continuation — line 76
+# variable: description — line 82
+# definition: main — line 87
+# variable: parser — line 89
+# variable: args — line 91
+# variable: names — line 92
+# variable: rows — line 100
+# variable: name — line 101
+# variable: label — line 102
+# variable: path — line 104
+# variable: original — line 105
+# variable: end — line 106
+# variable: start — line 106
+# variable: expected — line 107
 # END CODE MAP
 
 import argparse
@@ -35,6 +35,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 BEGIN, END = "<!-- BEGIN FILE GUIDE -->", "<!-- END FILE GUIDE -->"
 SPECIAL = {
+    "requirements-native.lock": "Exact hash-locked Windows portable build graph; no runtime downloads on user launch.",
+    "docs/licenses/tcl-9.0.4.txt": "Actual Tcl9.0.4 runtime notice read from the verified bundled SDK zipfs.",
+    "docs/licenses/tk-9.0.4.txt": "Actual Tk9.0.4 runtime notice read from the verified bundled SDK zipfs.",
+    "examples/desktop/before.json": "Fictional earlier closed snapshot with one protected direct membership.",
+    "examples/desktop/after.json": "Fictional changed snapshot with nested and newly observed direct membership edges.",
+    "examples/desktop/partial.json": "Fictional explicitly incomplete group evidence; absence does not prove revocation.",
+    "examples/desktop/policy.json": "Fictional protected-group/approval policy used by actual desktop and CLI engines.",
     "docs/reports/project-guide.docx": "Reviewed Word project guide with source revision and dated validation scope.",
     "docs/reports/publications.json": "Exact reviewed Office file identities, immutable source baseline and workflow observations.",
     ".gitignore": "Exclude private identity snapshots, databases, outputs and tool caches.",

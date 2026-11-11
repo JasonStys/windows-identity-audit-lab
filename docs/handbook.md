@@ -53,3 +53,7 @@ The reviewed source is [`b82073c8ae41450b917ec7b3dde9eca40d7d30ea`](https://gith
 ## Maintaining these editions
 
 Update the editable usage/design/test documents first. Rebuild and visually review every Word page and workbook tab before replacing an edition; verify the exact binary digests and evidence source in publications.json. Keep account data, logs with secrets, installed-app state and private test stores out of documentation. Source and release assets retain their existing security and licensing boundaries.
+
+## Native workbench 1.1.0
+
+[Native usage, offline data boundary, packaging and real-widget validation](native-workbench.md). The CLI and original validation gates remain; supplied evidence is never live enforcement or a security/authorization approval. Historical report measurements remain dated observations of their recorded sources.

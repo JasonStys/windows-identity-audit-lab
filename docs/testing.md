@@ -11,3 +11,7 @@ Independent Windows job: .NET well-known SID agreement, authorized read-only Loc
 Matrix: Ubuntu 24.04 Python 3.12/3.14, Windows Python 3.14, macOS Intel Python 3.14. CodeQL security-extended Python, full Python dependency audit, hash-verified Gitleaks and actionlint. PowerShell uses PSScriptAnalyzer, not CodeQL.
 
 Limitations: no AD/Entra connector, access-token/ACL rights, event-log correlation, domain controller integration, credential auditing, adversarial OS or complete real-world security proof. Native CI cannot guarantee every Windows version/provider works. Assertions and coverage are reported separately. Benchmarks are descriptive, not hardware-dependent pass gates.
+
+## Native workbench 1.1.0
+
+[Native usage, offline data boundary, packaging and real-widget validation](native-workbench.md). The CLI and original validation gates remain; supplied evidence is never live enforcement or a security/authorization approval. Historical report measurements remain dated observations of their recorded sources.
