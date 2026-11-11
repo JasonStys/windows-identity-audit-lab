@@ -1,7 +1,7 @@
 # Jason Stys: zero-dependency offline runtime, strict types and combined statement/branch coverage.
 [project]
 name = "windows-identity-audit-lab"
-version = "1.1.0"
+version = "1.1.1"
 description = "Offline Windows identity assurance by Jason Stys"
 requires-python = ">=3.12"
 dependencies = []

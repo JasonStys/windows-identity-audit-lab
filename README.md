@@ -59,6 +59,14 @@ Actions deliberately upload no artifacts, create no caches, and print only synth
 
 Accepted implementation validation: **95 tests / 100% Python statement-and-branch coverage** on all four OS/Python entries, **24 exact scenario oracles**, **29 Windows native/synthetic/static assertions**, and all seven CI jobs passed. See the immutable [validation report](docs/validation.md) and latest [Actions](https://github.com/JasonStys/windows-identity-audit-lab/actions). Risk-based testing and privacy documentation shaped the implementation, especially unknown evidence and approval boundaries.
 
+## Native profile storage correction
+
+Version 1.1.1 rejects pre-existing linked/nonregular fixed profile and SQLite
+sidecar entries before initialization can write through an alias. Ordinary
+recovery files and existing profile schemas remain supported; no data is reset.
+See the [confirmed fixture, recovery tests and scope](docs/reports/profile-admission-2026-11-11.md).
+Earlier native releases and documentation retain their own dated evidence.
+
 ## Every tracked file
 
 <!-- BEGIN FILE GUIDE -->
@@ -88,6 +96,7 @@ Accepted implementation validation: **95 tests / 100% Python statement-and-branc
 | [docs/reports/office-input-boundary-2026-11-10.md](docs/reports/office-input-boundary-2026-11-10.md) | Documentation input boundary review — 2026-11-10. |
 | [docs/reports/portfolio-sync-2026-10-22.md](docs/reports/portfolio-sync-2026-10-22.md) | <!-- File: docs/reports/portfolio-sync-2026-10-22.md; Purpose: certificate-bundle security repair and evidence by Jason Stys. -->. |
 | [docs/reports/powershell.json](docs/reports/powershell.json) | Actual synthetic and disposable-runner Windows validation. |
+| [docs/reports/profile-admission-2026-11-11.md](docs/reports/profile-admission-2026-11-11.md) | Fixed profile entry admission — November 11, 2026. |
 | [docs/reports/project-guide.docx](docs/reports/project-guide.docx) | Reviewed Word project guide with source revision and dated validation scope. |
 | [docs/reports/publications.json](docs/reports/publications.json) | Exact reviewed Office file identities, immutable source baseline and workflow observations. |
 | [docs/reports/recertification-2026-11-09.md](docs/reports/recertification-2026-11-09.md) | Nested membership recertification validation — November 9, 2026. |
@@ -142,6 +151,7 @@ Accepted implementation validation: **95 tests / 100% Python statement-and-branc
 | [tests/test\_desktop\_project.py](tests/test_desktop_project.py) | Independent SID-path, incomplete-evidence and no-enforcement native-adapter oracles. Jason Stys. |
 | [tests/test\_desktop\_state.py](tests/test_desktop_state.py) | Independent offline desktop ownership, byte-bound, SQLite and non-overwrite regressions. Jason Stys. |
 | [tests/test\_evidence.py](tests/test_evidence.py) | Jason Stys: private no-overwrite bundles, SQL injection safety, escaped HTML and actual CLI round trips. |
+| [tests/test\_profile\_admission.py](tests/test_profile_admission.py) | Actual pre-existing alias refusal and ordinary SQLite recovery continuity. Jason Stys. |
 | [tests/test\_publication\_privacy.py](tests/test_publication_privacy.py) | Jason Stys: credentials in actual Word XML remain visible to repository privacy checks. |
 | [tests/test\_reader\_races.py](tests/test_reader_races.py) | Actual opened-device and POSIX regular-to-FIFO replacement regressions for bounded readers. Jason Stys. |
 | [tests/test\_recertify.py](tests/test_recertify.py) | Jason Stys: independent nested exposure, partial-evidence and expiry worklist oracles. |

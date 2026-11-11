@@ -70,7 +70,7 @@ from .recertify import publish, recertify
 
 ROOT = Path(getattr(sys, "_MEIPASS", Path(__file__).resolve().parents[1]))
 PRODUCT, PROFILE = "windows-identity-audit-lab", "WindowsIdentityAuditLab"
-TITLE, VERSION = "Windows Identity Audit Workbench", "1.1.0"
+TITLE, VERSION = "Windows Identity Audit Workbench", "1.1.1"
 COLUMNS = ("SID / group", "Rule / work item", "Evidence / owner", "State / priority")
 RESOURCES = tuple(
     "examples/desktop/" + name + ".json"
